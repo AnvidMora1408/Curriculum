@@ -4,7 +4,7 @@ Este es mi Curriculum Vitae desarrollado como una aplicación web moderna utiliz
 
 ## Stack Tecnológico
 
-- **React + Vite** con Hot Module Replacement (HMR)
+- **React + Vite**
 - **ESLint** configurado para mantener la calidad del código
 - **Plugins oficiales**:
   - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) - Soporte para React con Babel
