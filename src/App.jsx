@@ -11,83 +11,53 @@ import CircularGallery from "./Components/CircularGallery/CircularGallery.jsx";
 import ScrollFloat from "./assets/blocks/ScrollFloat/ScrollFloat.jsx";
 
 const App = () => {
-    // Código de ejemplo para los bloques
-    const codeExample1 = `function Comment(props) {
-  return (
-    <div className="Comment">
-      <div className="UserInfo">
-        <img className="Avatar"
-          src={props.author.avatarUrl}
-          alt={props.author.name}
-        />
-        <div className="UserInfo-name">
-          {props.author.name}
-        </div>
-      </div>
-      <div className="Comment-text">
-        {props.text}
-      </div>
-      <div className="Comment-date">
-        {formatDate(props.date)}
-      </div>
-    </div>
-  );
-}`;
 
-    const codeExample2 = `#include <bits/stdc++.h>
-    using namespace std;
-    
-    int main() {
-    \tfloat a=5;
-    \tfloat b=6;
-    \tint resta=0;
-    \tint suma=0;
-    \tint multi=0;
-    \tfloat división=0;
-    
-    resta = a-b;
-    suma = a+b;
-    multi = a*b;
-    división = a/b;
-    
-    std::cout << "El valor de la resta de "<< a << " - " << b << " = " <<resta<< std::endl;
-    std::cout << "El valor de la suma de "<< a << " + " << b << " = " <<suma<< std::endl;
-    std::cout << "El valor de la multiplicación de "<< a << " * " << b << " = " <<multi<< std::endl;
-    std::cout << "El valor de la división de "<< a << " / " << b << " = " <<división<< std::endl;
+    const codeExample = `package main
 
-}`;
+import "fmt"
 
-    const codeExample3 = `class BinarySearchTree {
-  constructor() {
-    this.root = null;
-  }
-  
-  insert(value) {
-    const newNode = { value, left: null, right: null };
+func main() {
+    const pesotrm float32 = 4044.51
+    const util float32 = 0.05
+    var dollar float32
+    var peso float32
+    var opt int
     
-    if (!this.root) {
-      this.root = newNode;
-      return;
-    }
+    fmt.Println("Para pesos a dólares ingrese 1")
+    fmt.Println("Para dólares a pesos ingrese 2")
+    fmt.Scan(&opt)
     
-    this.insertNode(this.root, newNode);
-  }
-  
-  insertNode(node, newNode) {
-    if (newNode.value < node.value) {
-      if (!node.left) {
-        node.left = newNode;
-      } else {
-        this.insertNode(node.left, newNode);
-      }
+    if opt == 1 {
+        fmt.Print("¿Cuántos dólares quiere comprar el cliente? ")
+        fmt.Scan(&dollar)
+        
+        var pesod float32 = pesotrm * dollar
+        var pesodutil float32 = pesod * util
+        var totalpeso float32 = pesod + pesodutil
+        
+        fmt.Printf("Dólares que se lleva el cliente: $%.2f USD\\n", dollar)
+        fmt.Printf("Valor base: $%.2f COP\\n", pesod)
+        fmt.Printf("Utilidad (5%%): $%.2f COP\\n", pesodutil)
+        fmt.Printf("Total que el cliente paga: $%.2f COP\\n", totalpeso)
+        fmt.Printf("Ganancia de la casa: $%.2f COP\\n", pesodutil)
+        
+    } else if opt == 2 {
+        fmt.Print("¿Cuántos dólares quiere vender el cliente? ")
+        fmt.Scan(&dollar)
+        
+        var pesod float32 = pesotrm * dollar
+        var pesodutil float32 = pesod * util
+        var totalpeso float32 = pesod - pesodutil
+        
+        fmt.Printf("Dólares que trae el cliente: $%.2f USD\\n", dollar)
+        fmt.Printf("Valor base: $%.2f COP\\n", pesod)
+        fmt.Printf("Utilidad (5%%): $%.2f COP\\n", pesodutil)
+        fmt.Printf("Total que el cliente RECIBE: $%.2f COP\\n", totalpeso)
+        fmt.Printf("Ganancia de la casa de cambio: $%.2f COP\\n", pesodutil)
+        
     } else {
-      if (!node.right) {
-        node.right = newNode;
-      } else {
-        this.insertNode(node.right, newNode);
-      }
+        fmt.Println("Opción inválida, selecciona 1 o 2.")
     }
-  }
 }`;
 
     return (
@@ -251,12 +221,13 @@ const App = () => {
                 </ParallaxLayer>
                 <ParallaxLayer offset={4} speed={0.2}>
                     <div className="ejercicios-section">
-                        <h1>Ejercicios</h1>
+                        <h1>Ejercicio</h1>
                         <div className="code-blocks-container">
+
                             <div className="code-block">
-                                <h3>Componente React</h3>
+                                <h3>Cambio de divisas</h3>
                                 <SyntaxHighlighter
-                                    language="jsx"
+                                    language="go"
                                     style={tomorrow}
                                     customStyle={{
                                         borderRadius: '10px',
@@ -265,41 +236,10 @@ const App = () => {
                                         overflow: 'auto'
                                     }}
                                 >
-                                    {codeExample1}
+                                    {codeExample}
                                 </SyntaxHighlighter>
                             </div>
 
-                            <div className="code-block">
-                                <h3>Operaciones básicas</h3>
-                                <SyntaxHighlighter
-                                    language="javascript"
-                                    style={tomorrow}
-                                    customStyle={{
-                                        borderRadius: '10px',
-                                        fontSize: '14px',
-                                        maxHeight: '400px',
-                                        overflow: 'auto'
-                                    }}
-                                >
-                                    {codeExample2}
-                                </SyntaxHighlighter>
-                            </div>
-
-                            <div className="code-block">
-                                <h3>Hola mundo</h3>
-                                <SyntaxHighlighter
-                                    language="javascript"
-                                    style={tomorrow}
-                                    customStyle={{
-                                        borderRadius: '10px',
-                                        fontSize: '14px',
-                                        maxHeight: '400px',
-                                        overflow: 'auto'
-                                    }}
-                                >
-                                    {codeExample3}
-                                </SyntaxHighlighter>
-                            </div>
                         </div>
                     </div>
                 </ParallaxLayer>
